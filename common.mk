@@ -148,6 +148,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     disable_configstore
 
+# Device Settings
+PRODUCT_PACKAGES += \
+    DeviceSettings
+
 # Display
 PRODUCT_PACKAGES += \
     gralloc.msm8998 \
@@ -226,6 +230,7 @@ PRODUCT_PACKAGES += \
     init.devstart.sh \
     init.qcom.rc \
     init.qcom.usb.rc \
+    init.target.displaymodes.rc \
     init.radio.sh \
     ueventd.qcom.rc
 
@@ -376,10 +381,6 @@ PRODUCT_SOONG_NAMESPACES += \
 PRODUCT_PACKAGES += \
     ipacm \
     IPACM_cfg.xml
-
-# Tri-state-key
-PRODUCT_PACKAGES += \
-    KeyHandler
 
 # USB
 PRODUCT_PACKAGES += \
