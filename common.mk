@@ -148,6 +148,10 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-service
 
 
+# Camera app
+PRODUCT_PACKAGES += \
+    Camera
+
 # Configstore
 PRODUCT_PACKAGES += \
     disable_configstore
