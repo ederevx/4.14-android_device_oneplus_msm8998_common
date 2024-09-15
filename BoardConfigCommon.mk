@@ -70,9 +70,6 @@ BOARD_USES_ALSA_AUDIO := true
 # Display
 TARGET_SCREEN_DENSITY := 420
 
-# Filesystem
-TARGET_FS_CONFIG_GEN += $(PLATFORM_PATH)/config.fs
-
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     $(PLATFORM_PATH)/framework_compatibility_matrix.xml \
