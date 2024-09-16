@@ -4,6 +4,15 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
+    <!-- Paths to the libraries that contain device specific key handlers -->
+    <string-array name="config_deviceKeyHandlerLibs" translatable="false">
+        <item>/system/system_ext/priv-app/DeviceSettings/DeviceSettings.apk</item>
+    </string-array>
+
+    <!-- Names of the key handler classes -->
+    <string-array name="config_deviceKeyHandlerClasses" translatable="false">
+        <item>com.android.device.DeviceSettings.TouchKeyHandler</item>
+    </string-array>
 
     <!-- Array of light sensor LUX values to define our levels for auto backlight brightness support.
          The N entries of this array define N  1 zones as follows:
