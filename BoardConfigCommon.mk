@@ -83,7 +83,7 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     $(PLATFORM_PATH)/framework_compatibility_matrix.xml \
     hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml \
     hardware/qcom-caf/common/vendor_framework_compatibility_matrix_legacy.xml \
-    vendor/lineage/config/device_framework_matrix.xml
+    vendor/alpha/config/device_framework_matrix.xml
 DEVICE_MANIFEST_FILE := $(PLATFORM_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := hardware/qcom-caf/common/compatibility_matrix.xml
 
@@ -120,7 +120,7 @@ BOARD_SUPER_PARTITION_GROUPS := cheesedump_dynpart
 BOARD_CHEESEDUMP_DYNPART_SIZE := $(shell expr $(BOARD_SUPER_PARTITION_SIZE) - 4194304 )
 BOARD_CHEESEDUMP_DYNPART_PARTITION_LIST := odm product system system_ext vendor
 
-ifneq ($(WITH_GMS), true)
+ifneq ($(TARGET_BUILD_PACKAGE), 3)
 TARGET_RO_FILE_SYSTEM_TYPE := ext4
 else
 TARGET_RO_FILE_SYSTEM_TYPE := erofs
@@ -143,7 +143,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_USES_MKE2FS := true
 
-ifneq ($(WITH_GMS),true)
+ifneq ($(TARGET_BUILD_PACKAGE), 3)
 BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE := 94371840 # 90 MiB
 BOARD_SYSTEMIMAGE_EXTFS_INODE_COUNT := -1
 BOARD_SYSTEM_EXTIMAGE_PARTITION_RESERVED_SIZE := 94371840 # 90MiB
@@ -190,7 +190,7 @@ BOARD_ROOT_EXTRA_SYMLINKS += /mnt/vendor/persist:/persist
 VENDOR_SECURITY_PATCH := 2020-09-01
 
 # SELinux
-include device/lineage/sepolicy/libperfmgr/sepolicy.mk
+include device/alpha/sepolicy/libperfmgr/sepolicy.mk
 include device/qcom/sepolicy-legacy-um/SEPolicy.mk
 
 BOARD_VENDOR_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy/vendor

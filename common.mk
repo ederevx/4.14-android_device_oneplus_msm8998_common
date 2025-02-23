@@ -456,3 +456,37 @@ PRODUCT_PACKAGES += \
 # RmNet xml config file
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/data/netmgr_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/data/netmgr_config.xml
+
+# AlphaDroid
+
+# Device config
+TARGET_HAS_UDFPS := false
+TARGET_ENABLE_BLUR := true
+TARGET_EXCLUDES_AUDIOFX := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+
+# Build config
+
+# Launcher
+TARGET_INCLUDE_LAWNCHAIR := false
+
+# (valid only for GAPPS builds)
+ifeq ($(TARGET_BUILD_PACKAGE), 3)
+TARGET_INCLUDE_PIXEL_LAUNCHER := true
+TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_SUPPORTS_CALL_RECORDING := true
+TARGET_INCLUDE_STOCK_ARCORE := true
+TARGET_INCLUDE_LIVE_WALLPAPERS := true
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
+endif
+
+# Debugging
+TARGET_INCLUDE_MATLOG := false
+WITH_ADB_INSECURE := false
+
+# Extras
+TARGET_INCLUDE_RIMUSIC := false
+
+# Maintainer
+ALPHA_BUILD_TYPE := Unofficial
+ALPHA_MAINTAINER := ederevx
