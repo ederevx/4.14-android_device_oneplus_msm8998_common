@@ -39,7 +39,6 @@ import com.android.internal.yaap.hardware.LineageHardwareManager; // Need FWB su
 import com.android.internal.yaap.hardware.TouchscreenGesture; // Need FWB support
 
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
-import com.android.settingslib.collapsingtoolbar.R;
 
 import java.lang.System;
 
