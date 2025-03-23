@@ -1,0 +1,71 @@
+cc_library_shared {
+    name: "libOmxVdec",
+    vendor: true,
+
+    srcs: [
+        "src/frameparser.cpp",
+        "src/h264_utils.cpp",
+        "src/mp4_utils.cpp",
+        "src/hevc_utils.cpp",
+        "src/ts_parser.cpp",
+        "src/omx_vdec_v4l2.cpp",
+    ],
+
+    cflags: [
+        "-Werror",
+        "-Wno-parentheses",
+        "-Wno-unused-parameter",
+        "-D_ANDROID_",
+        "-D_ANDROID_ICS_",
+        "-D_UBWC_",
+        "-D_MSM8974_",
+        "-DNO_ARM_CLZ",
+        "-DPROCESS_EXTRADATA_IN_OUTPUT_PORT",
+        "-DMAX_RES_1080P",
+        "-DMAX_RES_1080P_EBI",
+        "-DIMAGE_APPS_PROC",
+        "-DMASTER_CIDE_CP",
+        "-D_QUERY_DISP_RES_",
+        "-DADAPTIVE_PLAYBACK_SUPPORTED",
+        "-DALLOCATE_OUTPUT_NATIVEHANDLE",
+        "-DFLEXYUV_SUPPORTED",
+        "-DUSE_ION",
+        "-DMAX_H264_LEVEL_52",
+    ],
+
+    include_dirs: [
+        "system/memory/libion/include",
+        "system/memory/libion/kernel-headers",
+    ],
+
+    header_libs: [
+        "display_headers",
+        "libc2dcolorconvert_headers",
+        "libnativebase_headers",
+        "libomxcommon_headers",
+        "libomxcore_headers",
+        "libomxvdec_headers",
+        "libutils_headers",
+        "media_plugin_headers",
+        "qti_kernel_headers",
+    ],
+
+    shared_libs: [
+        "libc2dcolorconvert",
+        "libcutils",
+        "libqdutils",
+        "libion",
+        "liblog",
+        "libqdMetaData",
+    ],
+
+    static_libs: [
+        "libOmxVidcCommon",
+    ],
+}
+
+cc_library_headers {
+    name: "libomxvdec_headers",
+    export_include_dirs: ["inc"],
+    vendor: true,
+}
