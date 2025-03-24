@@ -35,6 +35,7 @@ cc_library_shared {
         "libhardware_headers",
         "libsystem_headers",
         "qti_kernel_headers",
+        "libqtiaudiohal_headers",
     ],
 
     shared_libs: [
@@ -43,10 +44,6 @@ cc_library_shared {
         "liblog",
         "libtinyalsa",
     ],
-
-    sanitize: {
-        integer_overflow: true,
-    },
 }
 
 cc_library_shared {
@@ -65,26 +62,24 @@ cc_library_shared {
     ] + select(soong_config_variable("ANDROID", "target_board_platform"), {
         any @ flag_val: [
             "-DLIB_AUDIO_HAL=/vendor/lib/hw/audio.primary." + flag_val + ".so",
-            "-DLIB64_AUDIO_HAL=/vendor/lib64/hw/audio.primary." + flag_val + ".so",
         ],
         default: [
             "-DLIB_AUDIO_HAL=/vendor/lib/hw/audio.primary.qcom.so",
-            "-DLIB64_AUDIO_HAL=/vendor/lib64/hw/audio.primary.qcom.so",
         ],
     }),
 
     include_dirs: [
         "external/tinyalsa/include",
         "external/tinycompress/include",
-        "hardware/qcom-caf/sm8150/audio/hal",
-        "hardware/qcom-caf/sm8150/audio/hal/audio_extn",
         "system/media/audio_route/include",
         "system/media/audio_utils/include",
     ],
 
     header_libs: [
         "libhardware_headers",
+        "libsystem_headers",
         "qti_kernel_headers",
+        "libqtiaudiohal_headers",
     ],
 
     shared_libs: [
@@ -92,8 +87,4 @@ cc_library_shared {
         "libdl",
         "liblog",
     ],
-
-    sanitize: {
-        integer_overflow: true,
-    },
 }
