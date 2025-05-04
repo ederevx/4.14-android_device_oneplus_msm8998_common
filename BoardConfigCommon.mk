@@ -215,3 +215,18 @@ TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 TARGET_USES_COLOR_METADATA := true
 TARGET_USES_DISPLAY_RENDER_INTENTS := true
+
+# Matrixx
+
+ifeq ($(WITH_GMS),true)
+# To Build Google(Dailer, Message, Phone) and BCR
+WITH_GMS_COMMS_SUITE := true
+
+# To Add cinematic wallpaer support (only supported in gapps build not in vanilla remove this flag for vanilla builds)
+TARGET_SUPPORTS_WALLEFFECT := true
+
+#Some more GMS Flag
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
+TARGET_INCLUDE_STOCK_ARCORE := true
+TARGET_INCLUDE_STOCK_AICORE := true
+endif
