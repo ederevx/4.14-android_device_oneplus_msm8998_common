@@ -462,3 +462,6 @@ PRODUCT_PACKAGES += \
 # RmNet xml config file
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/data/netmgr_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/data/netmgr_config.xml
+
+# Infinity
+INFINITY_MAINTAINER := "ederevx"
