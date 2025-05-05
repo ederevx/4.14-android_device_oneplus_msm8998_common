@@ -460,3 +460,13 @@ PRODUCT_PACKAGES += \
 # RmNet xml config file
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/data/netmgr_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/data/netmgr_config.xml
+
+# Infinity
+INFINITY_MAINTAINER := "ederevx"
+TARGET_SUPPORTS_BLUR := true
+
+ifeq ($(WITH_GAPPS),true)
+TARGET_SHIPS_FULL_GAPPS := true
+TARGET_SHIPS_GOOGLE_DIALER := true
+USE_MOTO_CALCULATOR := false
+endif
